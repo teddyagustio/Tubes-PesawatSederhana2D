@@ -65,6 +65,13 @@ int main() {
     bullets.push_back(newBullet);                    // Wadah peluru yang bisa digunakan
   }
 
+    // Update posisi semua peluru
+  for (auto& bullet : bullets) {    // Bertujuan untuk mengambil atau memeriksa peluru
+    bullet.rect.y -= bullet.speed * GetFrameTime();  // Bergerak ke atas
+  }
+
+  
+
   // Kode looping selama window tidak di close (atau ESC ditekan)
   // Mendeteksi window close button atau ESC key
   while (!WindowShouldClose()) {
